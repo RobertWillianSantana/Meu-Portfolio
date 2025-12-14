@@ -340,3 +340,19 @@ h1{
     transform: scale(1);
   }
 }
+
+.botao-curriculo{
+     display: block;          /* ESSENCIAL */
+    margin: 30px auto;       /* centraliza */
+
+    width: 300px;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    border: none;
+    border-radius: 8px;
+    color: var(--claro);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-decoration: none;
+}

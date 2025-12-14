@@ -69,140 +69,127 @@
                 assumir desafios na área de tecnologia e contribuir ativamente para os objetivos da empresa.
             </p>
 
-            </sectior>
 
         </section>
+        <a href="https://drive.google.com/file/d/1rRhsmlvKX_Xk76jjSJcHtfrs-Xfz5TFz/view?usp=sharing" , target="_blank"
+            rel="noopener noreferrer">
+            <button class="botao-curriculo">Baixar Currículo</button>
+
+
+        </a>
+
+
+    </section>
 
 
 
 
 
-        <section id="projetos" class="projetos">
-            <h2 class="projetos-titulo">Meus Projetos</h2>
-            <div class="projetos-caixa">
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
 
-                <div class="projetos-card" onclick="abrirProjeto()">
+            <div class="projetos-card" onclick="abrirProjeto()">
 
-                    <img src="./imgs/projeto1.png" alt="Imagem do Projeto 1" class="projeto-imagem">
-                    <div class="caixa-textos-projeto">
-                        <h3 class="info-projetos">Gestão de Pedidos</h3>
+                <img src="./imgs/projeto1.png" alt="Imagem do Projeto 1" class="projeto-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Gestão de Pedidos</h3>
 
-                        <p class="paragrafo-projetos">Sistema de pedidos desenvolvido com Clean Architecture...</p>
+                    <p class="paragrafo-projetos">Sistema de pedidos desenvolvido com Clean Architecture...</p>
+                </div>
+
+                <div class="modal" id="modalProjeto" onclick="fecharProjeto()">
+                    <div class="modal-content">
+                        <span class="close" id="btnFechar">&times;</span>
+
+                        <h2>Gestão de Pedidos</h2>
+
+                        <p>
+                            Desenvolvimento de uma API RESTful para gestão de pedidos, aplicando Clean Architecture,
+                            CQRS e DDD. Integração com SQL Server (Entity Framework) e MongoDB, com separação de
+                            leitura e escrita, controle de status de pedidos e modelagem de domínio orientada às
+                            regras de negócio.
+                        </p>
+
+                        <ul>
+                            <li>✔ Clean Architecture</li>
+                            <li>✔ CQRS</li>
+                            <li>✔ DDD</li>
+                            <li>✔ SQL Server + MongoDB</li>
+                        </ul>
+
+                        <a href="https://github.com/GestaoPedidos/api-gestao-pedidos" target="_blank" class="btn">
+                            Ver no GitHub
+                        </a>
                     </div>
 
-                    <div class="modal" id="modalProjeto" onclick="fecharProjeto()">
-                        <div class="modal-content">
-                            <span class="close" id="btnFechar">&times;</span>
-
-                            <h2>Gestão de Pedidos</h2>
-
-                            <p>
-                                Desenvolvimento de uma API RESTful para gestão de pedidos, aplicando Clean Architecture, CQRS e DDD. Integração com SQL Server (Entity Framework) e MongoDB, com separação de leitura e escrita, controle de status de pedidos e modelagem de domínio orientada às regras de negócio.
-                            </p>
-
-                            <ul>
-                                <li>✔ Clean Architecture</li>
-                                <li>✔ CQRS</li>
-                                <li>✔ DDD</li>
-                                <li>✔ SQL Server + MongoDB</li>
-                            </ul>
-
-                            <a href="https://github.com/GestaoPedidos/api-gestao-pedidos" target="_blank" class="btn">
-                                Ver no GitHub
-                            </a>
-                        </div>
-
-                    </div>
                 </div>
-        </section>
+            </div>
+    </section>
 
 
-        <script>
-            const modal = document.getElementById("modalProjeto");
-            const btnFechar = document.getElementById("btnFechar");
+    <script>
+        const modal = document.getElementById("modalProjeto");
+        const btnFechar = document.getElementById("btnFechar");
 
-            function abrirProjeto() {
-                modal.style.display = "flex";
-                document.body.style.overflow = "hidden";
-            }
+        function abrirProjeto() {
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
 
-            function fecharProjeto() {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
+        function fecharProjeto() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
 
-            // clique no X
-            btnFechar.addEventListener("click", fecharProjeto);
+        // clique no X
+        btnFechar.addEventListener("click", fecharProjeto);
 
-            // clique fora do conteúdo
-            modal.addEventListener("click", fecharProjeto);
+        // clique fora do conteúdo
+        modal.addEventListener("click", fecharProjeto);
 
-            // impede fechar ao clicar dentro
-            document.querySelector(".modal-content")
-                .addEventListener("click", e => e.stopPropagation());
+        // impede fechar ao clicar dentro
+        document.querySelector(".modal-content")
+            .addEventListener("click", e => e.stopPropagation());
 
-            // tecla ESC
-            document.addEventListener("keydown", e => {
-                if (e.key === "Escape") fecharProjeto();
-            });
-        </script>
+        // tecla ESC
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") fecharProjeto();
+        });
+    </script>
 
+    <section id="contato" class="contato">
+        <h2 class="contato-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarwhatsa()">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="8" id="mensagem"></textarea>
+            </div>
 
+            <button onclick="enviarwhatsa(event)" class="botao-form">Enviar Whatsapp</button>
+        </form>
+    </section>
 
+    <script>
+        function enviarwhatsa(event) {
+            event.preventDefault();
 
-        <section id="contato" class="contato">
-            <h2 class="contato-titulo">Entre em Contato</h2>
-            <form class="formulario-contato" id="formulario" onsubmit="enviarwhatsa()">
-                <div class="grupo-form">
-                    <input placeholder="Nome" class="campo-form" id="nome">
-                </div>
-                <div class="grupo-form">
-                    <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="8" id="mensagem"></textarea>
-                </div>
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5563992975284';
 
-                <button onclick="enviarwhatsa(event)" class="botao-form">Enviar Whatsapp</button>
+            const texto = `Olá, meu nome é ${nome}. ${mensagem}`;
+            const msgformatada = encodeURIComponent(texto);
 
-                <!-- <button type="submit" class="botao-form">Enviar Whatsapp</button> -->
-            </form>
-        </section>
-
-        <script>
-            function enviarwhatsa(event) {
-                event.preventDefault();
-
-                const nome = document.getElementById('nome').value;
-                const mensagem = document.getElementById('mensagem').value;
-                const telefone = '5563992975284';
-
-                const texto = `Olá, meu nome é ${nome}. ${mensagem}`;
-                const msgformatada = encodeURIComponent(texto);
-
-                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                const url = isMobile
-                    ? `https://wa.me/${telefone}?text=${msgformatada}`
-                    : `https://web.whatsapp.com/send?phone=${telefone}&text=${msgformatada}`;
-                window.location.href = url;
-            }
-        </script>
-
-
-        <!-- <script>
-            function enviarwhatsa(event) {
-                event.preventDefault();
-
-                const nome = document.getElementById('nome').value;
-                const mensagem = document.getElementById('mensagem').value;
-                const telefone = '5563992975284';
-
-                const texto = `Olá, meu nome é ${nome}. ${mensagem}`;
-                const msgformatada = encodeURIComponent(texto);
-                const url = `https://wa.me/${telefone}?text=${msgformatada}`;
-
-                console.log(url);
-
-                window.open(url, '_blank');
-            }
-        </script> -->
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            const url = isMobile
+                ? `https://wa.me/${telefone}?text=${msgformatada}`
+                : `https://web.whatsapp.com/send?phone=${telefone}&text=${msgformatada}`;
+            window.location.href = url;
+        }
+    </script>
 
 
 
