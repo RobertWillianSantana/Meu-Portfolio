@@ -119,6 +119,7 @@ h1{
 }
 .projetos{
     padding: 6rem 2rem;
+    align-items: center;
 }
 .projetos-caixa{
     display: grid;
