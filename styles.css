@@ -302,7 +302,9 @@ h1{
   background: var(--claro);
   color: var(--escuro);
   max-width: 900px;
-  width: 90%;
+  width: 95%;
+  height: 95%;
+  text-align: justify;
   max-height: 90vh;
   overflow-y: auto;
   border-radius: 20px;
@@ -315,7 +317,7 @@ h1{
   width: 100%;
   border-radius: 12px;
   margin: 20px 0;
-  max-width: 800px;
+  
 }
 
 .close {
