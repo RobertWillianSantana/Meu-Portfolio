@@ -152,7 +152,7 @@
 
         <section id="contato" class="contato">
             <h2 class="contato-titulo">Entre em Contato</h2>
-            <form class="formulario-contato" id="formulario" onsubmit="enviarwhatsa(event)">
+            <form class="formulario-contato" id="formulario" onsubmit="enviarwhatsa()">
                 <div class="grupo-form">
                     <input placeholder="Nome" class="campo-form" id="nome">
                 </div>
@@ -160,11 +160,33 @@
                     <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="8" id="mensagem"></textarea>
                 </div>
 
-                <button type="submit" class="botao-form">Enviar Whatsapp</button>
+                <button onclick="enviarwhatsa(event)" class="botao-form">Enviar Whatsapp</button>
+
+                <!-- <button type="submit" class="botao-form">Enviar Whatsapp</button> -->
             </form>
         </section>
 
         <script>
+            function enviarwhatsa(event) {
+                event.preventDefault();
+
+                const nome = document.getElementById('nome').value;
+                const mensagem = document.getElementById('mensagem').value;
+                const telefone = '5563992975284';
+
+                const texto = `Olá, meu nome é ${nome}. ${mensagem}`;
+                const msgformatada = encodeURIComponent(texto);
+
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                const url = isMobile
+                    ? `https://wa.me/${telefone}?text=${msgformatada}`
+                    : `https://web.whatsapp.com/send?phone=${telefone}&text=${msgformatada}`;
+                window.location.href = url;
+            }
+        </script>
+
+
+        <!-- <script>
             function enviarwhatsa(event) {
                 event.preventDefault();
 
@@ -180,7 +202,7 @@
 
                 window.open(url, '_blank');
             }
-        </script>
+        </script> -->
 
 
 
